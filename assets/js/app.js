@@ -76,6 +76,7 @@ function getWord(){
 
 //Start play Function
 function startPlay(){
+    timeLeftSpan.innerHTML=defaultLevelSeconds;
     let start = setInterval(()=>{
         timeLeftSpan.innerHTML--;
         if (timeLeftSpan.innerHTML ==="0"){
@@ -83,7 +84,29 @@ function startPlay(){
             clearInterval(start);
             //Compare Words
             if(theWord.innerHTML.toLowerCase()===input.value.toLowerCase()){
-                console.log("Good");
+                //Empty Input Field
+                input.value ='';
+                // Increase Score
+                scoreGot.innerHTML++; 
+                if (words.length>0){
+                    // Call Generate word function
+                    getWord();
+                }else{
+                    let span =document.createElement("span");
+                    let spanText=document.createTextNode("Well Don")
+                    span.className= 'good';
+                    span.appendChild(spanText);
+                    finishMessage.appendChild(span);
+                    //Rremove upcomingWords
+                    upcomingWords.remove();
+
+                }
+            }else{
+                let span= document.createElement("span");
+                let spanText=document.createTextNode("Game Over");
+                span.className='bad';
+                span.appendChild(spanText);
+                finishMessage.appendChild(span);
             }
 
         } 
