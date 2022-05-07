@@ -4,52 +4,161 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Typing Speed Game</title>
-    <link rel="stylesheet" href="assets/css/min.css">
+    <title>New Enterface</title>
+    <link rel="stylesheet" href="assets/bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body>
+<body class="bg-dark">
     <div class="game">
-        <div class="name">Typing Speed Game</div>
-            <div class="container">
-                <div class="message">
-                    You Are Playing On 
-                    <span class="lvl"></span>
-                    Level & You Have
-                    <span class="seconds"></span>
-                    Seconds To Type Type The Word 
+        <!-- Start Page 1-->
+        <div class="page-1 container">
+            <!--Start Header-->
+            <div class="header container-fluid pt-5 ">
+                <span class="name">Typing Speed Game</span>
+                <i class="fa fa-keyboard text-info icon-header pt-2 ps-4" aria-hidden="true"></i>
+            </div>
+            <!--End Header-->
+            <!--Start Typing Text-->
+            <div class="animation-word text-center text-info pt-3">
+                <span >Hello word</span>
+            </div>
+            <!--End Typing Text-->
+            <!-- Satrt High scoure-->
+            <div class="score-list container mt-2 bg-white p-3 rounded">
+                <h5 class="text-info text-center ">High Score</h6>
+                <div class="easy high-score pt-1">
+                    <span class="text-dark">Esay</span>
+                    <span class="text-dark"> <span id="esayhighscore">0</span> / <span id="easyTotal">30</span></span>
                 </div>
-                <div class="start">
-                    Start Playing
+                <div class="Normal high-score pt-1">
+                    <span class="text-dark">Normal</span>
+                    <span class="text-dark"> <span id="normalhighscore">0</span> / <span id="noramlTotal">30</span></span>
                 </div>
-                <div class="the-word"> 
-                </div>
-                <input type="text" class="input">
-                <div class="upcoming-word">
-                    Word Will Show Here
-                </div>
-                <div class="control">
-                    <div class="time">
-                        Time Left :
-                        <span></span>
-                        Seconds
-                    </div>
-                    <div class="score">
-                        Score: <span class="got">
-                            0
-                        </span>
-                        From 
-                        <span class="total">
-                        </span>
-                    </div>
-                </div>
-                <div class="finish">
+                <div class="Hard high-score pt-1">
+                    <span class="text-dark">Hard</span>
+                    <span class="text-dark"> <span id="hardhighscore">0</span> / <span id="hardTotal">30</span></span>
                 </div>
             </div>
+            <!-- End High scoure-->
+            <!-- Start Option-->
+            <div class="home-btns m-3 mt-5">
+                <button class="start-btn btn text-info start" type="button" data-bs-toggle="modal" data-bs-target="#model-game" > Start </button>
+                <select class="form-select select-level">
+                    <option  value="Normal">Normal</option>
+                    <option  value="Easy">Easy</option>
+                    <option  value="Hard">Hard</option>
+                </select>
+                <button class="start-btn btn text-info" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                aria-controls="offcanvasNavbar" >About The Game</button>
+            </div>
+            <!-- End Option-->
+        </div>
+        <!-- End Page 1-->
+        <!-- Start Page 2-->
+        <!-- Modal -->
+        <div class="modal  fade" id="model-game" >
+            <div class="modal-dialog modal-fullscreen">
+                <div class="modal-content bg-dark">
+                        <div class="modal-header border-0">
+                                <h5 class="modal-title text-info"> Typing Speed Game</h5>
+                                    <button type="button" class="btn close" data-bs-dismiss="modal" aria-label="Close"> <i class="fa fa-close text-white" style="font-size: 1.5em;" aria-hidden="true"></i></button>
+                            </div>
+                    <div class="modal-body container">
+
+                        <div class="control">
+                            <div class="lvl font-mobile-screen ">
+                               Level:
+                                <span ></span>
+                            </div>
+                            <div class="time text-danger   font-mobile-screen">
+                                <span>5</span>
+                            </div>
+                            <div class="score  font-mobile-screen ">
+                                Score: <span class="got ">
+                                    0
+                                </span>
+                                /
+                                <span class="total">
+                                    30
+                                </span>
+                            </div>
+                        </div>
+                        <div class="the-word mt-3 text-info rounded ">
+                        
+                        </div>
+                        <input type="text" class="input form-control mt-3 ">
+                        <div class="upcoming-word rounded d-none ">
+                            
+                        </div>
+                        <div class="finish ">
+                             <div class="percent text-info"><span>0</span>%</div>
+                            <div class="finish-message text-center mt-1"> </div>
+                            <div class="finish-btn mt-3">
+                                <button class="btn btn-sm text-info restart "></button>
+                                <button class="btn btn-sm text-info cancel close" data-bs-dismiss="modal">Cansel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Page 2-->
+
+        <div class="contactme mt-5 pt-3">
+            <h4 class="text-info">Contact With Me</h4>
+            <div class="links">
+            <a href="mailto:hamzaob7@gmail.com" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+            <a href="http://api.whatsapp.com/send?phone=+967738297947" target="_blank"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+            <a href="https//www.instagram.com/7mz_49" target="_blank"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+            </div>
+        </div>
+
+        <div class="copyrights mt-5  ">
+            <p>
+                Copyrights &copy; 2022 Hamza Blala 
+            </p>
+        </div>
+
+        <!-- inforamtion of the game -->
+        <div class="offcanvas offcanvas-start bg-dark" tabindex="-1" id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+            <h5 class="offcanvas-title ">About The Game</h5>
+            <button type="button" class=" btn text-info text-reset" data-bs-dismiss="offcanvas" > <i class="fa fa-close text-info" style="font-size:1.4em"  aria-hidden="true"></i> </button>
+            </div>
+            <div class="offcanvas-body">
+                <div class="container">
+                    <p>
+                        Welcome to the simple typing speed game ,To start the game  chooes the <span class="text-info">Level</span> and click <span class="text-info">Start</span>.
+                    </p>
+                    <p>
+                         First , You will have <span class="text-danger">6</span> seconds for the first word , then  the countdown begins according to the <span class="text-info">Level</span>.
+                    </p>
+                    <p>
+                        Then , In the <span class="text-info">Easy level</span> You will have <span class="text-danger">5</span> seconds and Easy-level words,
+                         In <span class="text-info">Normal level</span> You will have <span class="text-danger">4</span> seconds and Normal-level words, and the
+                         <span class="text-info">Hard level</span> You will have <span class="text-danger">3</span> seconds and Hard-level words.
+                    </p>
+                    <p>
+                        What are you waiting for !! click  <span class="text-info">Start</span> and start typing <i class="fa fa-fire text-danger" aria-hidden="true"></i>
+                    </p>
+                </div>
+           
+            </div>
+        </div>
+       
+
+        
+       
+
+
+        
     </div>
     
 
-
-
     <script src="assets/js/app.js"></script>
+    <script src="assets/bootstrap-5.0.2-dist/js/bootstrap.bundle.js"></script>
 </body>
 </html>
