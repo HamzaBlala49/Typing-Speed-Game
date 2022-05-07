@@ -6,17 +6,15 @@ const normalWords=[
    "advantage","accident","bedroom","bookstore","breakfast","company","continue","disappoint","exchange","forever","guidebook","headline","internet","keyboard","lesson","literature","midnight","medicine","network","national","notebook","operation","paragraph","perform","product","quality","remember","server","school","underline"
 ]
 const harddWords=[
-    "hard",
-    "hard2",
-    "hard3",
+    "congratulations","composition","disappointment","entertainment","explanation","granddaughter","headteacher","housework","introduction","neighbourhood","photographer","professional","questionnaire","qualification","reservation","roundabout","snowboarding","unnecessary","successful","roundabout","reasonably","pronunciation","preparation","organisation","membership","government","experiment","environment","disadvantag","conversation"
     
 ]
 // setting Levels
 let satrtTime=6;
 const lvls={
     "Easy":5,
-    "Normal":6,
-    "Hard":6
+    "Normal":4,
+    "Hard":3
 }
 //global varibable
 var start;
@@ -151,7 +149,7 @@ function startPlay(){
             defaultLevelSeconds=lvls[defaultLevelName]
             timeLeftSpan.innerHTML=defaultLevelSeconds;
             //Compare Words
-            if(theWord.innerHTML===input.value){
+            if(theWord.innerHTML.toLocaleLowerCase()===input.value.toLocaleLowerCase()){
                 //Empty Input Filed
                 input.value='';
                 //Increase Score
@@ -320,8 +318,6 @@ closeBtn.onclick=function(){
         });
 
     }
-
-    console.log(defaultlistWordes)
 
 }
 //Local Storag

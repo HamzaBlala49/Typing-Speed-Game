@@ -1,3 +1,9 @@
+* ::after ,::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
 body{
     color:white;
     font-family:"Open Sans",sans-serif;
@@ -39,8 +45,6 @@ body{
     border-left: 2px solid white;
     transition: left .2s;
     animation: typing 2.4s steps(8) infinite;
-    
-
 
 }
 
@@ -84,11 +88,13 @@ body{
 }
 .select-level{
     width: 140px;
-    text-align: center;
-    color: #212529;
+    /* text-align: center; */
+     color: #212529; 
     
 }
-
+/* .select-level option {
+    text-align: center !important; 
+} */
 
 /* Page 2*/
 .control{
@@ -104,13 +110,11 @@ body{
     font-size: 2em;
     border: 2px solid white;
     min-height: 15vh;
-
-
-
+    text-transform: capitalize;
 }
 .input{
     text-align: center;
-  
+
 }
 .form-control:focus{
     outline: none;
@@ -120,12 +124,12 @@ body{
 
 .upcoming-word{
     background-color: white;
-    margin: 15px 0;
-    padding: 15px;
+    margin: 15px 0 !important;
+    padding: 15px !important;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-
+    text-transform: capitalize;
 }
 
 .upcoming-word div{
@@ -197,6 +201,7 @@ body{
     .select-level{
         width: 100%;
         margin: 17px 0px;
+         padding-left: 40%;
     }
 }
 
