@@ -116,6 +116,7 @@ let scoreGot = document.querySelector(".score .got");
 let scoreTotal = document.querySelector(".score .total");
 let theWord = document.querySelector(".the-word");
 let upcomingWords = document.querySelector(".upcoming-word");
+let passwordInput = document.querySelector(".password-input");
 let input = document.querySelector(".form-control");
 let finishMessage = document.querySelector(".finish-message");
 let finish = document.querySelector(".finish");
@@ -185,6 +186,26 @@ function switchLevel() {
 input.onpaste = function () {
   return false;
 };
+passwordInput.onpaste = function () {
+  return false;
+};
+
+// Sync password input to visible input
+passwordInput.addEventListener("input", function () {
+  input.value = this.value;
+});
+
+// When clicking on visible input, focus the password input instead
+input.addEventListener("click", function () {
+  passwordInput.focus();
+});
+
+// Keep password input in sync when clearing
+input.addEventListener("change", function () {
+  if (this.value === "") {
+    passwordInput.value = "";
+  }
+});
 
 // Prevent copy, cut, and selection on word displays
 theWord.addEventListener("copy", (e) => e.preventDefault());
@@ -201,15 +222,17 @@ upcomingWords.addEventListener("mousedown", (e) => e.preventDefault());
 startButton.onclick = function () {
   scoreGot.innerHTML = 0;
   input.value = "";
+  passwordInput.value = "";
   defaultLevelSeconds = satrtTime;
   timeLeftSpan.innerHTML = defaultLevelSeconds;
   setInterval(function () {
-    input.focus();
+    passwordInput.focus();
   }, 100);
   // Generat Word Function
   getWord();
   //Empty Input Value
   input.value = "";
+  passwordInput.value = "";
   displyContaent();
 };
 function getWord() {
@@ -252,6 +275,7 @@ function startPlay() {
       ) {
         //Empty Input Filed
         input.value = "";
+        passwordInput.value = "";
         //Increase Score
         scoreGot.innerHTML++;
         if (defaultlistWordes.length > 0) {
@@ -318,6 +342,7 @@ restartButton.onclick = function () {
   percent.innerHTML = 0;
   scoreGot.innerHTML = 0;
   input.value = "";
+  passwordInput.value = "";
   defaultLevelSeconds = satrtTime;
   timeLeftSpan.innerHTML = defaultLevelSeconds;
   displyContaent();

@@ -88,6 +88,15 @@
                         <div class="the-word mt-3 text-info rounded ">
                         
                         </div>
+                        <!-- Hidden password input to prevent autocomplete -->
+                        <input  
+                            type="password"
+                            autocorrect="off"
+                            spellcheck="false"
+                            class="password-input"
+                            style="position: absolute; opacity: 0; pointer-events: none; height: 0;"
+                        >
+                        <!-- Visible input to show typed letters -->
                         <input  
                             type="text"
                             autocomplete="off"
